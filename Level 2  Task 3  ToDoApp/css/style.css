@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 96.5%;
+}
+
+body{
+   
+    background-color: rgb(255, 255, 255);
+    background: #161623;
+    
+}
+
+
+.container{
+  
+    max-width: 29rem;
+    border: .1rem solid rgb(255, 255, 255);
+    border-radius: .7rem;
+    margin: 2rem auto 0;
+    padding: 2rem 0;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 50;
+    margin: 1rem 0 3rem;
+    text-align: center;
+    color: #fff;;
+}
+.styling{
+    font-weight: 700;
+    color:rgb(255, 0, 128);
+    font-family: 'Baloo Bhai 2', cursive;
+}
+.input_div{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.input_div .input{
+    padding: 0.5rem 1.5rem;
+    margin: 0.25rem;
+    height: 3rem;
+    width: 20rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: rgb(240, 226, 226);
+    border-radius: 25px;
+    border: none;
+    
+}
+.addbtn{
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 25px;
+    outline: none;
+    border:none;
+    background-color: lime;
+    color:rgb(0, 0, 0); 
+    margin-left: 10px;
+    cursor: pointer;
+    
+}
+.addbtn:hover{
+    opacity: 0.5;
+}
+
+.item{
+    
+    width: 80%;
+    margin: .5rem auto 1.5rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 4px solid #fff;
+   
+}
+
+
+
+
+.item_input{
+    background: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    width: 11rem;
+    font-size: 1.2rem;
+    border:none;
+   
+}
+.editBtn{
+    font-size: 1.2rem;
+    color: green;
+    margin: 0 0.5rem;
+    background: none;
+    outline: none;
+    border:none;
+    cursor: pointer;
+
+}
+.removeBtn{
+    font-size: 1.2rem;
+    color: rgb(255, 2, 2);
+    background: none;
+    outline: none;
+    border:none;
+    cursor: pointer;
+
+}
+
+.status{
+   
+    width: 2rem;
+    margin: .5rem .8rem .5rem 0;
+    padding: .2rem 0;
+    color: rgb(195, 202, 206);
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;  
+
+}
+
+
+
+.status .fa-circle-check{
+    color: rgb(8, 180, 8);
+}
+
+
+
+@media (max-width: 500px){
+
+    html{
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 400px){
+
+    html{
+        font-size: 62%;
+    }
+}

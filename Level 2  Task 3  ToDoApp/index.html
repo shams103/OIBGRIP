@@ -1,0 +1,125 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><span class="styling">TO DO </span>LIST</h1>
+        <div class="input_div">
+            <input class="input" type="text" placeholder="What Do You Want To Do ...">
+            <button class="addBtn"><i class="fa fa-plus"></i></button>
+        </div>
+
+
+    </div>
+
+    <!-- internal javascript -->
+
+    <script type="text/javascript">
+        const addBtn = document.querySelector('.addBtn');
+        var input = document.querySelector('.input');
+        const container = document.querySelector('.container');
+
+
+
+        class item {
+            constructor(itemName) {
+                //Create the item Div
+                this.createDiv(itemName);
+            }
+
+            createDiv(itemName) {
+                let input = document.createElement('input');
+                input.value = itemName;
+                input.disabled = true;
+                input.classList.add('item_input');
+                input.type = "text";
+
+                let itemBox = document.createElement('div');
+                itemBox.classList.add('item');
+
+                let status = document.createElement('button');
+                status.classList.add('status');
+                status.innerHTML = '<i class="fa-solid fa-hourglass"></i>';
+
+
+                let editBtn = document.createElement('button');
+                editBtn.classList.add('editBtn');
+                editBtn.innerHTML = "EDIT";
+               
+
+
+                let removeBtn = document.createElement('button');
+                removeBtn.classList.add('removeBtn');
+                removeBtn.innerHTML = "REMOVE";
+
+
+                container.appendChild(itemBox);
+
+                itemBox.appendChild(input);
+                itemBox.appendChild(status);
+                itemBox.appendChild(editBtn);
+                itemBox.appendChild(removeBtn);
+              
+
+
+                editBtn.addEventListener('click', () => {
+                   
+                        input.disabled = !input.disabled;
+                        if(editBtn.innerHTML === "EDIT")
+                           {editBtn.innerHTML = "SAVE"}
+                        else{
+                            editBtn.innerHTML = "EDIT" }  
+                        
+                       
+                })
+
+                removeBtn.addEventListener('click', () => this.remove(itemBox));
+
+                status.addEventListener('click', () =>{
+                    
+                    status.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                })
+
+            }
+
+        
+            remove(item) {
+                container.removeChild(item);
+            }
+
+        }
+
+
+
+
+        function check() {
+            if (input.value != "") {
+                new item(input.value);
+                input.value = "";
+            }
+        }
+
+        addBtn.addEventListener('click', check);
+        window.addEventListener('keydown', (e) => {
+            if (e.which == 13) {
+                check();
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
